@@ -12,48 +12,41 @@ import {
   faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import axios from "axios";
 
 export default function FirstNav() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [date, setDate] = useState(new Date());
+ 
   const [location, setLocation] = useState(null);
   const [time, setTime] = useState(new Date());
+  const [weather, setWeather] = useState(null);
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
-        },
-        (error) => {
+    // Get the user's location
+    navigator.geolocation.getCurrentPosition((position) => {
+      
+
+      // Get the weather data for the user's location using an API
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=1906a421b773d4c0774e29816aba7fa8&units=metric`
+        )
+        .then((response) => {
+          setWeather(response.data.main.temp);
+          setLocation(response.data.name);
+        })
+        .catch((error) => {
           console.log(error);
-        }
-      );
-    }
-    const interValId = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(interValId);
+        });
+    });
+
+    // Update the date every second
+    const timerID = setInterval(() => setDate(new Date()), 1000);
+
+    // Clean up the timer when the component unmounts
+    return () => {
+      clearInterval(timerID);
+    };
   }, []);
-
-  useEffect(() => {
-    if (location) {
-      const API_KEY = "1906a421b773d4c0774e29816aba7fa8";
-      const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${API_KEY}`;
-      fetch(URL)
-        .then((response) => response.json())
-        .then((data) => setWeatherData(data))
-        .catch((error) => console.log(error));
-    }
-  }, [location]);
-  if (!location || !weatherData) {
-    return <Typography>Yuklanmoqda...</Typography>;
-  }
-
-  const { name: locationName } = weatherData;
- 
-  const { temp: temperature } = weatherData.main;
   return (
     <Box sx={{ background: "#161616", pt: 1.4, pb: 1 }}>
       <Container>
@@ -61,11 +54,11 @@ export default function FirstNav() {
           <Box sx={{ color: "#d1d1d1", display: "flex" }}>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
               <FontAwesomeIcon icon={faLocationDot} />
-              <Typography sx={{ pl: 0.5 }}>{locationName} </Typography>
+              <Typography sx={{ pl: 0.5 }}>{location} </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
               <FontAwesomeIcon icon={faCloud} />
-              <Typography sx={{ pl: 0.5 }}>{temperature}°C</Typography>
+              <Typography sx={{ pl: 0.5 }}>{weather}°C</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
               <FontAwesomeIcon icon={faCalendar} />
