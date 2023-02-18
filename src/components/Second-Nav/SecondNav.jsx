@@ -276,8 +276,18 @@ function SecondNav(props) {
           </Button>
         </a>
       </Box>
+      <Divider
+        textAlign="center"
+        color="white"
+        sx={{
+          width: "50%",
+          margin: "0 auto",
+          mb: 1,
+          mt: 1,
+        }}
+      />
       <Box>
-        <Typography sx={{ fontSize: "20px", color: "#787878", pt: 2, m: 0.8 }}>
+        <Typography sx={{ fontSize: "20px", color: "#787878", pt: 1, m: 0.8 }}>
           <FontAwesomeIcon icon={faLocationDot} />
           <strong style={{ paddingLeft: "7px" }}>Manzil</strong>: Toshkent,
           Yangiyo'l tumani, 42-maktab binosi
@@ -316,7 +326,46 @@ function SecondNav(props) {
             LOGO
           </Typography>
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "flex", sm: "flex" } }}>
+            <Box
+              sx={{
+                display: { sm: "none", xs: "none", md: "flex" },
+                alignItems: "center",
+              }}
+            >
+              <Box sx={{ pr: 4 }}>
+                <a href="mailto:abduodirovhumoyun@gmail.com">
+                  <Button
+                    startIcon={
+                      <FontAwesomeIcon icon={faEnvelope} size="15px" />
+                    }
+                    sx={{
+                      textTransform: "none",
+                      fontSize: "18px",
+                      color: "#787878",
+                      "&:hover": { color: "#fdb515" },
+                    }}
+                  >
+                    42-maktab@gmail.con
+                  </Button>
+                </a>
+              </Box>
+              <Box sx={{ pr: 4 }}>
+                <a href="tel:+998944192806">
+                  <Button
+                    startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
+                    sx={{
+                      textTransform: "none",
+                      fontSize: "18px",
+                      color: "#787878",
+                      "&:hover": { color: "#fdb515" },
+                    }}
+                  >
+                    Tel: +998944192806
+                  </Button>
+                </a>
+              </Box>
+            </Box>
             <a
               href="https://mpe.uz/front-end/assets_files/images/flag_big.png"
               target="_blank"

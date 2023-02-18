@@ -11,6 +11,7 @@ import {
   faInstagram,
   faTelegram,
   faTwitter,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
 
@@ -38,7 +39,7 @@ export default function FirstNav() {
     };
   }, []);
   return (
-    <Box sx={{ background: "#161616"  }}>
+    <Box sx={{ background: "#161616" }}>
       <Container maxWidth="xl">
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ color: "#d1d1d1", display: "flex" }}>
@@ -74,15 +75,47 @@ export default function FirstNav() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
-                  <FontAwesomeIcon icon={faTelegram} color="#d1d1d1" />
+                <IconButton
+                  sx={{
+                    color: "#d1d1d1",
+
+                    fontSize: { xs: "20px", sm: "23px" },
+                    "&:hover": {
+                      color: "#0088cc",
+                    },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTelegram} />
                 </IconButton>
               </a>
-              <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
-                <FontAwesomeIcon icon={faInstagram} color="#d1d1d1" />
+              <IconButton
+                sx={{
+                  color: "#d1d1d1",
+                  fontSize: {
+                    xs: "20px",
+                    sm: "23px",
+                    "&:hover": {
+                      color: "#d62976",
+                    },
+                  },
+                }}
+              >
+                <FontAwesomeIcon icon={faInstagram} />
               </IconButton>
-              <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
-                <FontAwesomeIcon icon={faTwitter} color="#d1d1d1" />
+
+              <IconButton
+                sx={{
+                  fontSize: {
+                    color: "#d1d1d1",
+                    xs: "20px",
+                    sm: "23px",
+                    "&:hover": {
+                      color: "#FF0000",
+                    },
+                  },
+                }}
+              >
+                <FontAwesomeIcon icon={faYoutube} />
               </IconButton>
             </Box>
           </Box>
