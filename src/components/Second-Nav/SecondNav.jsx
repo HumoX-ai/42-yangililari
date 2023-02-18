@@ -6,17 +6,25 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowDown,
+  faBars,
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+  faRss,
+} from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "@mui/material";
+import {
+  faInstagram,
+  faTelegram,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const drawerWidth = 240;
 
@@ -43,14 +51,238 @@ function SecondNav(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Logo
       </Typography>
-      <Divider />
-      <ListItem disablePadding>
-        <ListItemButton sx={{ textAlign: "center" }}>
-          <ListItemText primary="number" />
-        </ListItemButton>
-      </ListItem>
+      <Divider
+        textAlign="center"
+        color="white"
+        sx={{
+          width: "80%",
+          margin: "0 auto",
+          mb: 1,
+          mt: 1,
+        }}
+      />
+      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+        <a
+          href="https://mpe.uz/front-end/assets_files/images/flag_big.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Box sx={{ color: "black", display: "flex", alignItems: "center" }}>
+            <img
+              src="https://mpe.uz/front-end/assets_files/images/flag.svg"
+              alt="bayroq"
+            />
+            <Typography
+              sx={{
+                pl: 0.5,
+
+                fontWeight: 500,
+
+                "&:hover": {
+                  color: "#fdb515",
+                },
+              }}
+            >
+              Bayroq
+            </Typography>
+          </Box>
+        </a>
+      </Button>
+      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+        <a
+          href="https://mpe.uz/front-end/assets_files/images/emblem_big.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Box sx={{ color: "black", display: "flex", alignItems: "center" }}>
+            <img
+              src="https://mpe.uz/front-end/assets_files/images/emblem.svg"
+              alt="gerb"
+            />
+            <Typography
+              sx={{
+                pl: 0.5,
+                fontWeight: 500,
+                "&:hover": {
+                  color: "#fdb515",
+                },
+              }}
+            >
+              Gerb
+            </Typography>
+          </Box>
+        </a>
+      </Button>
+      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+        <a
+          href="https://mpe.uz/front-end/assets_files/music/hymn.mp3"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Box
+            sx={{
+              color: "black",
+              display: "flex",
+              alignItems: "center",
+              "&:hover": {
+                color: "#fdb515",
+              },
+            }}
+          >
+            <img
+              src="https://mpe.uz/front-end/assets_files/images/sound.svg"
+              alt="madhiya"
+            />
+            <Typography
+              sx={{
+                pl: 0.5,
+                fontWeight: 500,
+              }}
+            >
+              Madhiya
+            </Typography>
+          </Box>
+        </a>
+      </Button>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <a
+          href="https://t.me/yangiyolmaktab42"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconButton
+            sx={{
+              fontSize: { xs: "20px", sm: "23px" },
+              "&:hover": {
+                color: "#0088cc",
+              },
+            }}
+          >
+            <FontAwesomeIcon icon={faTelegram} />
+          </IconButton>
+        </a>
+        <IconButton
+          sx={{
+            fontSize: {
+              xs: "20px",
+              sm: "23px",
+              "&:hover": {
+                color: "#d62976",
+              },
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={faInstagram} />
+        </IconButton>
+        <IconButton
+          sx={{
+            fontSize: {
+              xs: "20px",
+              sm: "23px",
+              "&:hover": {
+                color: "#0088cc",
+              },
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={faTwitter} />
+        </IconButton>
+        <IconButton
+          sx={{
+            fontSize: {
+              xs: "20px",
+              sm: "23px",
+              "&:hover": {
+                color: "#FF0000",
+              },
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={faYoutube} />
+        </IconButton>
+      </Box>
+      <Divider
+        textAlign="center"
+        color="white"
+        sx={{
+          width: "50%",
+          margin: "0 auto",
+          mb: 3,
+          mt: 3,
+        }}
+      />
+      <Typography variant="h5" sx={{ fontWeight: 700 }}>
+        Murojaat uchun
+      </Typography>
+      <Box sx={{ mt: 2.5 }}>
+        <a href="tel:+998935980539">
+          <Button
+            startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
+            sx={{
+              textTransform: "none",
+              fontSize: "18px",
+              color: "#787878",
+              "&:hover": { color: "black" },
+            }}
+          >
+            Tel: +998935980539
+          </Button>
+        </a>
+        <a href="tel:+998944192806">
+          <Button
+            startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
+            sx={{
+              textTransform: "none",
+              fontSize: "18px",
+              color: "#787878",
+              "&:hover": { color: "black" },
+            }}
+          >
+            Tel: +998944192806
+          </Button>
+        </a>
+        <a href="mailto:abduodirovhumoyun@gmail.com">
+          <Button
+            startIcon={<FontAwesomeIcon icon={faEnvelope} size="15px" />}
+            sx={{
+              textTransform: "none",
+              fontSize: "18px",
+              color: "#787878",
+              "&:hover": { color: "black" },
+            }}
+          >
+            1-Email manzil
+          </Button>
+        </a>
+        <a href="mailto:abduodirovhumoyun@gmail.com">
+          <Button
+            startIcon={<FontAwesomeIcon icon={faEnvelope} size="15px" />}
+            sx={{
+              textTransform: "none",
+              fontSize: "18px",
+              color: "#787878",
+              "&:hover": { color: "black" },
+            }}
+          >
+            2-Email manzil
+          </Button>
+        </a>
+      </Box>
+      <Box>
+        <Typography sx={{ fontSize: "20px", color: "#787878", pt: 2, m: 0.8 }}>
+          <FontAwesomeIcon icon={faLocationDot} />
+          <strong style={{ paddingLeft: "7px" }}>Manzil</strong>: Toshkent,
+          Yangiyo'l tumani, 42-maktab binosi
+        </Typography>
+      </Box>
     </Box>
   );
 
@@ -95,7 +327,16 @@ function SecondNav(props) {
                   src="https://mpe.uz/front-end/assets_files/images/flag.svg"
                   alt="bayroq"
                 />
-                <Typography sx={{ pl: 0.5 }}>Bayroq</Typography>
+                <Typography
+                  sx={{
+                    pl: 0.5,
+                    "&:hover": {
+                      color: "#fdb515",
+                    },
+                  }}
+                >
+                  Bayroq
+                </Typography>
               </Button>
             </a>
             <a
@@ -108,7 +349,16 @@ function SecondNav(props) {
                   src="https://mpe.uz/front-end/assets_files/images/emblem.svg"
                   alt="gerb"
                 />
-                <Typography sx={{ pl: 0.5 }}>Gerb</Typography>
+                <Typography
+                  sx={{
+                    pl: 0.5,
+                    "&:hover": {
+                      color: "#fdb515",
+                    },
+                  }}
+                >
+                  Gerb
+                </Typography>
               </Button>
             </a>
             <a
@@ -121,7 +371,16 @@ function SecondNav(props) {
                   src="https://mpe.uz/front-end/assets_files/images/sound.svg"
                   alt="madhiya"
                 />
-                <Typography sx={{ pl: 0.5 }}>Madhiya</Typography>
+                <Typography
+                  sx={{
+                    pl: 0.5,
+                    "&:hover": {
+                      color: "#fdb515",
+                    },
+                  }}
+                >
+                  Madhiya
+                </Typography>
               </Button>
             </a>
           </Box>
@@ -159,7 +418,14 @@ function SecondNav(props) {
       >
         <Box onClick={Nav2}>
           <Button
-            sx={{ textTransform: "none", color: "white" }}
+            sx={{
+              textTransform: "none",
+              color: "white",
+
+              "&:hover": {
+                color: "#fdb515",
+              },
+            }}
             endIcon={<FontAwesomeIcon icon={faArrowDown} />}
           >
             Maktab haqida
@@ -175,8 +441,14 @@ function SecondNav(props) {
             }}
           >
             <Button
-              sx={{ textTransform: "none", color: "white" }}
-              endIcon={<FontAwesomeIcon icon={faArrowDown} />}
+              sx={{
+                textTransform: "none",
+                color: "white",
+                "&:hover": {
+                  color: "#fdb515",
+                },
+              }}
+              endIcon={<FontAwesomeIcon icon={faRss} />}
             >
               So'nggi yangiliklar
             </Button>
