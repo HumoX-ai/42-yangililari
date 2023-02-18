@@ -39,7 +39,7 @@ export default function FirstNav() {
     };
   }, []);
   return (
-    <Box sx={{ background: "#161616" }}>
+    <Box sx={{ background: "#161616", }}>
       <Container maxWidth="xl">
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ color: "#d1d1d1", display: "flex" }}>
