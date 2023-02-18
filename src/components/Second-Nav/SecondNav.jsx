@@ -28,7 +28,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
-const drawerWidth = 301;
+const drawerWidth = 302;
 
 function SecondNav(props) {
   const { window } = props;
