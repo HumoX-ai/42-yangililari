@@ -1,7 +1,6 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import React from "react";
 
 export default function MainOne() {
-  return (
-    <div>Main-One</div>
-  )
+  return <Box id="about" sx={{ height: "100vh" }}>Main-One</Box>;
 }

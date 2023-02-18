@@ -15,54 +15,54 @@ import {
 import axios from "axios";
 
 export default function FirstNav() {
-  const [date, setDate] = useState(new Date());
- 
-  const [location, setLocation] = useState(null);
-  const [time, setTime] = useState(new Date());
+  const [, setDate] = useState(new Date());
+
+  const [time] = useState(new Date());
   const [weather, setWeather] = useState(null);
   useEffect(() => {
-    // Get the user's location
-    navigator.geolocation.getCurrentPosition((position) => {
-      
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=1906a421b773d4c0774e29816aba7fa8&units=metric`
+      )
+      .then((response) => {
+        setWeather(response.data.main.temp);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-      // Get the weather data for the user's location using an API
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=1906a421b773d4c0774e29816aba7fa8&units=metric`
-        )
-        .then((response) => {
-          setWeather(response.data.main.temp);
-          setLocation(response.data.name);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    });
-
-    // Update the date every second
     const timerID = setInterval(() => setDate(new Date()), 1000);
 
-    // Clean up the timer when the component unmounts
     return () => {
       clearInterval(timerID);
     };
   }, []);
   return (
-    <Box sx={{ background: "#161616", pt: 1.4, pb: 1 }}>
-      <Container>
+    <Box sx={{ background: "#161616"  }}>
+      <Container maxWidth="xl">
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ color: "#d1d1d1", display: "flex" }}>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faLocationDot} />
-              <Typography sx={{ pl: 0.5 }}>{location} </Typography>
+              <FontAwesomeIcon icon={faLocationDot} size="sm" />
+              <Typography
+                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+              >
+                Yangiyo'l
+              </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faCloud} />
-              <Typography sx={{ pl: 0.5 }}>{weather}°C</Typography>
+              <FontAwesomeIcon icon={faCloud} size="sm" />
+              <Typography
+                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+              >
+                {Math.floor(weather)}°C
+              </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faCalendar} />
-              <Typography sx={{ pl: 0.5 }}>
+              <FontAwesomeIcon icon={faCalendar} size="sm" />
+              <Typography
+                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+              >
                 {time.toLocaleDateString()}
               </Typography>
             </Box>
@@ -74,14 +74,14 @@ export default function FirstNav() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <IconButton>
+                <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
                   <FontAwesomeIcon icon={faTelegram} color="#d1d1d1" />
                 </IconButton>
               </a>
-              <IconButton>
+              <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
                 <FontAwesomeIcon icon={faInstagram} color="#d1d1d1" />
               </IconButton>
-              <IconButton>
+              <IconButton sx={{ fontSize: { xs: "20px", sm: "23px" } }}>
                 <FontAwesomeIcon icon={faTwitter} color="#d1d1d1" />
               </IconButton>
             </Box>
