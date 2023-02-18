@@ -26,7 +26,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 function SecondNav(props) {
   const { window } = props;
@@ -49,7 +49,10 @@ function SecondNav(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", backgroundColor: "#e8e9eb", height: "100vh" }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         Logo
       </Typography>
