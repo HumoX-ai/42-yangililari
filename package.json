@@ -17,8 +17,10 @@
     "axios": "^1.3.3",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.3",
     "react-dom": "^18.2.0",
     "react-focus-lock": "^2.9.4",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "scroll-into-view": "^1.16.2",
@@ -48,5 +50,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Humoyun2005/42-news.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Humoyun2005/42-news/issues"
+  },
+  "homepage": "https://github.com/Humoyun2005/42-news#readme"
 }

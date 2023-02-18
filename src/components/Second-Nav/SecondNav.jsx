@@ -1,5 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import { Fade } from "react-reveal";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,6 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faArrowDown,
   faBars,
@@ -53,9 +55,11 @@ function SecondNav(props) {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", backgroundColor: "#e8e9eb", height: "100vh" }}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Logo
-      </Typography>
+      <Fade bottom duration={1500} delay={2000}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Logo
+        </Typography>
+      </Fade>
       <Divider
         textAlign="center"
         color="white"
@@ -374,66 +378,79 @@ function SecondNav(props) {
               target="_blank"
               rel="noreferrer"
             >
-              <Button sx={{ color: "#fff" }}>
-                <img
-                  src="https://mpe.uz/front-end/assets_files/images/flag.svg"
-                  alt="bayroq"
-                />
-                <Typography
-                  sx={{
-                    pl: 0.5,
-                    "&:hover": {
-                      color: "#fdb515",
-                    },
-                  }}
-                >
-                  Bayroq
-                </Typography>
-              </Button>
+              <Fade duration={1000} top>
+                <Button sx={{ color: "#fff" }}>
+                  <img
+                    src="https://mpe.uz/front-end/assets_files/images/flag.svg"
+                    alt="bayroq"
+                  />
+                  <Typography
+                    sx={{
+                      pl: 0.5,
+                      "&:hover": {
+                        color: "#fdb515",
+                      },
+                    }}
+                  >
+                    Bayroq
+                  </Typography>
+                </Button>
+              </Fade>
             </a>
+            <Box>
+              <Divider orientation="vertical" color="#b4b4b4" />
+            </Box>
             <a
               href="https://mpe.uz/front-end/assets_files/images/emblem_big.png"
               target="_blank"
               rel="noreferrer"
             >
-              <Button sx={{ color: "#fff" }}>
-                <img
-                  src="https://mpe.uz/front-end/assets_files/images/emblem.svg"
-                  alt="gerb"
-                />
-                <Typography
-                  sx={{
-                    pl: 0.5,
-                    "&:hover": {
-                      color: "#fdb515",
-                    },
-                  }}
-                >
-                  Gerb
-                </Typography>
-              </Button>
+              <Fade top duration={1500}>
+                <Button sx={{ color: "#fff" }}>
+                  <img
+                    src="https://mpe.uz/front-end/assets_files/images/emblem.svg"
+                    alt="gerb"
+                  />
+
+                  <Typography
+                    sx={{
+                      pl: 0.5,
+                      "&:hover": {
+                        color: "#fdb515",
+                      },
+                    }}
+                  >
+                    Gerb
+                  </Typography>
+                </Button>
+              </Fade>
             </a>
+            <Box>
+              <Divider orientation="vertical" color="#b4b4b4" />
+            </Box>
             <a
               href="https://mpe.uz/front-end/assets_files/music/hymn.mp3"
               target="_blank"
               rel="noreferrer"
             >
-              <Button sx={{ color: "#fff" }}>
-                <img
-                  src="https://mpe.uz/front-end/assets_files/images/sound.svg"
-                  alt="madhiya"
-                />
-                <Typography
-                  sx={{
-                    pl: 0.5,
-                    "&:hover": {
-                      color: "#fdb515",
-                    },
-                  }}
-                >
-                  Madhiya
-                </Typography>
-              </Button>
+              <Fade top duration={2000}>
+                <Button sx={{ color: "#fff" }}>
+                  <img
+                    src="https://mpe.uz/front-end/assets_files/images/sound.svg"
+                    alt="madhiya"
+                  />
+                  <Typography
+                    sx={{
+                      pl: 0.5,
+                      "&:hover": {
+                        color: "#fdb515",
+                      },
+                    }}
+                  >
+                    Madhiya
+                  </Typography>
+                </Button>
+              </Fade>
             </a>
           </Box>
         </Toolbar>

@@ -2,6 +2,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Fade from "react-awesome-reveal";
 import {
   faCalendar,
   faCloud,
@@ -10,7 +11,6 @@ import {
 import {
   faInstagram,
   faTelegram,
-  faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
@@ -44,31 +44,37 @@ export default function FirstNav() {
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ color: "#d1d1d1", display: "flex" }}>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faLocationDot} size="sm" />
-              <Typography
-                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
-              >
-                Yangiyo'l
-              </Typography>
+              <Fade up duration={1000} direction="up">
+                <FontAwesomeIcon icon={faLocationDot} size="sm" />
+                <Typography
+                  sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+                >
+                  Yangiyo'l
+                </Typography>
+              </Fade>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faCloud} size="sm" />
-              <Typography
-                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
-              >
-                {Math.floor(weather)}°C
-              </Typography>
+              <Fade up duration={2000}>
+                <FontAwesomeIcon icon={faCloud} size="sm" />
+                <Typography
+                  sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+                >
+                  {Math.floor(weather)}°C
+                </Typography>
+              </Fade>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pr: 2 }}>
-              <FontAwesomeIcon icon={faCalendar} size="sm" />
-              <Typography
-                sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
-              >
-                {time.toLocaleDateString()}
-              </Typography>
+              <Fade top duration={3000}>
+                <FontAwesomeIcon icon={faCalendar} size="sm" />
+                <Typography
+                  sx={{ pl: 0.5, fontSize: { xs: "13px", sm: "16px" } }}
+                >
+                  {time.toLocaleDateString()}
+                </Typography>
+              </Fade>
             </Box>
           </Box>
-          <Box>
+          <Fade top cascade duration={2000}>
             <Box>
               <a
                 href="https://t.me/yangiyolmaktab42"
@@ -118,7 +124,7 @@ export default function FirstNav() {
                 <FontAwesomeIcon icon={faYoutube} />
               </IconButton>
             </Box>
-          </Box>
+          </Fade>
         </Box>
       </Container>
     </Box>
