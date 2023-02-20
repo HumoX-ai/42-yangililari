@@ -232,7 +232,7 @@ function SecondNav(props) {
       <Box sx={{ mt: 2.5 }}>
         <a href="tel:+998935980539">
           <Button
-            startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
+            startIcon={<FontAwesomeIcon icon={faPhone}  />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -245,7 +245,7 @@ function SecondNav(props) {
         </a>
         <a href="tel:+998944192806">
           <Button
-            startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
+            startIcon={<FontAwesomeIcon icon={faPhone}  />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -258,7 +258,7 @@ function SecondNav(props) {
         </a>
         <a href="mailto:abduodirovhumoyun@gmail.com">
           <Button
-            startIcon={<FontAwesomeIcon icon={faEnvelope} size="15px" />}
+            startIcon={<FontAwesomeIcon icon={faEnvelope} />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -271,7 +271,7 @@ function SecondNav(props) {
         </a>
         <a href="mailto:abduodirovhumoyun@gmail.com">
           <Button
-            startIcon={<FontAwesomeIcon icon={faEnvelope} size="15px" />}
+            startIcon={<FontAwesomeIcon icon={faEnvelope}  />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -342,34 +342,39 @@ function SecondNav(props) {
             >
               <Box sx={{ pr: 4 }}>
                 <a href="mailto:abduodirovhumoyun@gmail.com">
-                  <Button
-                    startIcon={
-                      <FontAwesomeIcon icon={faEnvelope} size="15px" />
-                    }
-                    sx={{
-                      textTransform: "none",
-                      fontSize: "18px",
-                      color: "#787878",
-                      "&:hover": { color: "#fdb515" },
-                    }}
-                  >
-                    42-maktab@gmail.con
-                  </Button>
+                  <Fade top duration={1800}>
+                    
+                    <Button
+                      startIcon={
+                        <FontAwesomeIcon icon={faEnvelope}  />
+                      }
+                      sx={{
+                        textTransform: "none",
+                        fontSize: "18px",
+                        color: "#787878",
+                        "&:hover": { color: "#fdb515" },
+                      }}
+                    >
+                      42-maktab@gmail.con
+                    </Button>
+                  </Fade>
                 </a>
               </Box>
               <Box sx={{ pr: 4 }}>
                 <a href="tel:+998944192806">
-                  <Button
-                    startIcon={<FontAwesomeIcon icon={faPhone} size="15px" />}
-                    sx={{
-                      textTransform: "none",
-                      fontSize: "18px",
-                      color: "#787878",
-                      "&:hover": { color: "#fdb515" },
-                    }}
-                  >
-                    Tel: +998944192806
-                  </Button>
+                  <Fade top duration={1500}>
+                    <Button
+                      startIcon={<FontAwesomeIcon icon={faPhone} />}
+                      sx={{
+                        textTransform: "none",
+                        fontSize: "18px",
+                        color: "#787878",
+                        "&:hover": { color: "#fdb515" },
+                      }}
+                    >
+                      Tel: +998944192806
+                    </Button>
+                  </Fade>
                 </a>
               </Box>
             </Box>
