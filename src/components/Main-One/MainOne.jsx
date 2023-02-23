@@ -7,7 +7,7 @@ export default function MainOne() {
   return (
     <Container maxWidth="xl">
       <Box id="about" sx={{ height: "100vh", pt: 3 }}>
-        <Box>
+        <Box sx={{ height: "100vh" }}>
           <Grid
             container
             direction="row"

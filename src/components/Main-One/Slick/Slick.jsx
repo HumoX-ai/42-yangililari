@@ -23,7 +23,7 @@ import { Fade } from "react-reveal";
 
 export default function Slick() {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" >
       <Swiper
         slidesPerView={1}
         spaceBetween={10}

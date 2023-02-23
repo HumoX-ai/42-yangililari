@@ -27,7 +27,12 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import styled from "styled-components";
 
+const Color = styled(Box)`
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+`;
 const drawerWidth = 302;
 
 function SecondNav(props) {
@@ -51,7 +56,7 @@ function SecondNav(props) {
   };
 
   const drawer = (
-    <Box
+    <Color
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", backgroundColor: "#e8e9eb", height: "100vh" }}
     >
@@ -70,13 +75,30 @@ function SecondNav(props) {
           mt: 1,
         }}
       />
-      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+      <Button
+        fullWidth
+        sx={{
+          pt: 2,
+          pb: 2,
+          background: "#2b5876",
+        }}
+      >
         <a
           href="https://mpe.uz/front-end/assets_files/images/flag_big.png"
           target="_blank"
           rel="noreferrer"
         >
-          <Box sx={{ color: "black", display: "flex", alignItems: "center" }}>
+          <Box
+            sx={{
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+             
+              "&:hover": {
+                color: "#fdb515",
+              },
+            }}
+          >
             <img
               src="https://mpe.uz/front-end/assets_files/images/flag.svg"
               alt="bayroq"
@@ -86,10 +108,6 @@ function SecondNav(props) {
                 pl: 0.5,
 
                 fontWeight: 500,
-
-                "&:hover": {
-                  color: "#fdb515",
-                },
               }}
             >
               Bayroq
@@ -97,13 +115,13 @@ function SecondNav(props) {
           </Box>
         </a>
       </Button>
-      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+      <Button fullWidth sx={{ pt: 2, pb: 2, mt: 1, background: "#2b5876" }}>
         <a
           href="https://mpe.uz/front-end/assets_files/images/emblem_big.png"
           target="_blank"
           rel="noreferrer"
         >
-          <Box sx={{ color: "black", display: "flex", alignItems: "center" }}>
+          <Box sx={{ color: "white", display: "flex", alignItems: "center" }}>
             <img
               src="https://mpe.uz/front-end/assets_files/images/emblem.svg"
               alt="gerb"
@@ -122,7 +140,7 @@ function SecondNav(props) {
           </Box>
         </a>
       </Button>
-      <Button fullWidth sx={{ pt: 2, pb: 2 }}>
+      <Button fullWidth sx={{ pt: 2, pb: 2, mt: 1, background: "#2b5876" }}>
         <a
           href="https://mpe.uz/front-end/assets_files/music/hymn.mp3"
           target="_blank"
@@ -130,7 +148,7 @@ function SecondNav(props) {
         >
           <Box
             sx={{
-              color: "black",
+              color: "white",
               display: "flex",
               alignItems: "center",
               "&:hover": {
@@ -155,6 +173,7 @@ function SecondNav(props) {
       </Button>
       <Box
         sx={{
+          mt: 1,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -232,7 +251,7 @@ function SecondNav(props) {
       <Box sx={{ mt: 2.5 }}>
         <a href="tel:+998935980539">
           <Button
-            startIcon={<FontAwesomeIcon icon={faPhone}  />}
+            startIcon={<FontAwesomeIcon icon={faPhone} />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -245,7 +264,7 @@ function SecondNav(props) {
         </a>
         <a href="tel:+998944192806">
           <Button
-            startIcon={<FontAwesomeIcon icon={faPhone}  />}
+            startIcon={<FontAwesomeIcon icon={faPhone} />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -271,7 +290,7 @@ function SecondNav(props) {
         </a>
         <a href="mailto:abduodirovhumoyun@gmail.com">
           <Button
-            startIcon={<FontAwesomeIcon icon={faEnvelope}  />}
+            startIcon={<FontAwesomeIcon icon={faEnvelope} />}
             sx={{
               textTransform: "none",
               fontSize: "18px",
@@ -296,11 +315,11 @@ function SecondNav(props) {
       <Box>
         <Typography sx={{ fontSize: "20px", color: "#787878", pt: 1, m: 0.8 }}>
           <FontAwesomeIcon icon={faLocationDot} />
-          <strong style={{ paddingLeft: "7px" }}>Manzil</strong>: Toshkent,
-          Yangiyo'l tumani, 42-maktab binosi
+          <strong style={{ paddingLeft: "7px" }}>Manzil</strong>: Manzil:
+          Toshkent viloyati, Yangiyo'l t, Markaz MFY, “Beshariq” k. 8-uy
         </Typography>
       </Box>
-    </Box>
+    </Color>
   );
 
   const container =
@@ -343,11 +362,8 @@ function SecondNav(props) {
               <Box sx={{ pr: 4 }}>
                 <a href="mailto:abduodirovhumoyun@gmail.com">
                   <Fade top duration={1800}>
-                    
                     <Button
-                      startIcon={
-                        <FontAwesomeIcon icon={faEnvelope}  />
-                      }
+                      startIcon={<FontAwesomeIcon icon={faEnvelope} />}
                       sx={{
                         textTransform: "none",
                         fontSize: "18px",

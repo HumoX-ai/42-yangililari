@@ -1,11 +1,19 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Fade } from "react-reveal";
 export default function MainTwo() {
   return (
     <div id="home">
-      <Box sx={{ height: "100vh" }}>
+      <Container maxWidth="xl">
         <Fade top cascade duration={1000} delay={1000}>
-          <Typography sx={{ pb: 3 }}>
+          <Typography
+            sx={{
+              color: "white",
+              fontSize: "18px",
+              fontFamily: "roboto",
+              fontWeight: 500,
+              
+            }}
+          >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
             reprehenderit corporis, autem eius repudiandae dignissimos nisi amet
             ea natus aperiam porro voluptate quisquam officiis perferendis
@@ -42,7 +50,7 @@ export default function MainTwo() {
             nostrum incidunt esse blanditiis, ipsum, quam libero labore.
           </Typography>
         </Fade>
-      </Box>
+      </Container>
     </div>
   );
 }
